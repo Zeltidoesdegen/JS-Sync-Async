@@ -5,7 +5,7 @@
 const apiURL = "https://jsonplaceholder.typicode.com/todos"
 
 function getTodo () {
-    fetch(apiURL)
+    fetch(apiURL+"?_limit=10")
         .then((res) => res.json())
         .then((data) => {
             data.forEach((todo) => addToDoDiv(todo));
