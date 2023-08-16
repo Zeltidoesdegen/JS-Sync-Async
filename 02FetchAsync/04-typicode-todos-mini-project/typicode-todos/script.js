@@ -4,8 +4,8 @@
 //#####################################
 const apiURL = "https://jsonplaceholder.typicode.com/todos"
 
-const getTodo = () => {
-    fetch(apiURL + "?_limit=10")
+function getTodo () {
+    fetch(apiURL)
         .then((res) => res.json())
         .then((data) => {
             data.forEach((todo) => addToDoDiv(todo));
@@ -25,8 +25,8 @@ function addToDoDiv (todo) {
     document.getElementById('todo-list').appendChild(div);
 };
 
-function createToDo (e) {
-    e.preventDefault();
+function createToDo (event) {
+    event.preventDefault();
 
     const newTodo = {
         title: e.target.firstElementChild.value,
